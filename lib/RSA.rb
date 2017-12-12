@@ -26,13 +26,14 @@ class RSA
    
   def new_key
    #generates a new 'n','e' and 'd' values following the RSA algorithm. Returns a new array of three elements where the first element is 'n', the second is 'e' and the third is 'd'. Each time it is called a new key must be returned.
+		p = 0
 		loop do 
-  		p = rand(1, 100)
+  		p = rand(1...100)
   		break if Prime.prime?(p)
   	end
-  	
+  	q = 0
   	loop do 
-  		q = rand(1, 100)
+  		q = rand(1...100)
  		 	break if Prime.prime?(q)
 		end
   	
