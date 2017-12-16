@@ -47,7 +47,7 @@ class RSA
 		end
 			
   [n, e, d]
-end
+	end
 
 	def encrypt message
 	# encrypts the message passed.The message is of type string.Encrypts each symbol of this string by using its ASCII number representation and returns the encrypted message.
