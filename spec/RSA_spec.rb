@@ -14,8 +14,8 @@ RSpec.describe RSA do
         expect(rsa.d).to eq 29
     end
     
-    #it "should encrpyt and decrypt correctly with keys given by me" do 
-		#	expect(rsa.decrypt rsa.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
+		#it "should encrpyt and decrypt correctly with keys given by me" do 
+			#expect(rsa.decrypt rsa.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
 		#end
 	
 	it "should encrypt and decrypt correctly with random generated values " do
