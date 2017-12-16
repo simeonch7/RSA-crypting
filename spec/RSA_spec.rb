@@ -1,25 +1,26 @@
 require(File.expand_path('../lib/RSA.rb', File.dirname(__FILE__)))
 
+
 RSpec.describe RSA do
-	rsa = RSA.new(43,17,59)
-	testing_helper = RSA.new(331,89,57)
+	rsa = RSA.new(151, 17, 29)
+
     it "checks if the return is the right n" do
-        expect(rsa.n).to eq 43
+        expect(rsa.n).to eq 151
     end
     it "checks if the return is the right e" do
         expect(rsa.e).to eq 17
     end
     it "checks if the return is the right d" do
-        expect(rsa.d).to eq 59
+        expect(rsa.d).to eq 29
     end
-	it "checks if it encrypts and decrypts corecctly with my own values" do 
-		expect(testing_helper.decrypt(testing_helper.encrypt("Simeon"))).to eq "Simeon"
-	end
+    
+    it "should encrpyt and decrypt correctly with keys given by me" do 
+			expect(rsa.decrypt rsa.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
+		end
 	
-	it "checks if it encrypts and decrypts corecctly with random generated values" do
-		rand_keys = testing_helper.new_key
-		parsed_keys = RSA.new rand_keys[0],rand_keys[1],rand_keys[2]
-		expect(parsed_keys.decrypt(parsed_keys.encrypt("Sim3on Ch@k@rov #24 11B"))).to eq "Sim3on Ch@k@rov #24 11B"
+	it "should encrypt and decrypt correctly with random generated values " do
+		rand_keys = RSA.new(151, 17, 29).new_key
+		parsed_keys = RSA.new(rand_keys[0],rand_keys[1],rand_keys[2])
+		expect(parsed_keys.decrypt parsed_keys.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
 	end
-	
 end
