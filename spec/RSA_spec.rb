@@ -15,9 +15,9 @@ RSpec.describe RSA do
 		end
 
 	
-	it "should encrypt and decrypt correctly with random generated values " do
-		rand_keys = rsa.new_key
-		parsed_keys = RSA.new(rand_keys[0],rand_keys[1],rand_keys[2])
-		expect(parsed_keys.decrypt parsed_keys.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
-	end
+		it "should encrypt and decrypt correctly with random generated values " do
+			rand_keys = rsa.new_key
+			parsed_keys = RSA.new(rand_keys[0],rand_keys[1],rand_keys[2])
+			expect(parsed_keys.decrypt parsed_keys.encrypt "ZimEon Ch@k@rOOv").to eq "ZimEon Ch@k@rOOv"
+		end
 end
