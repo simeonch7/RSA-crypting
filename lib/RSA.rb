@@ -28,10 +28,10 @@ class RSA
 	def new_key
 	# generates a new 'n', 'e' and 'd' values following the RSA algorithm.Returns a new array of three elements where the first element is 'n', the second is 'e' and the third is 'd'.Each time it is called a new key must be returned.
 	
-	p = Prime.first 150
-	p = p.at(rand(1...150))
-	q = Prime.first 150
-	q = q.at(rand(1...150))
+	p = Prime.first 50
+	p = p.at(rand(1...50))
+	q = Prime.first 50
+	q = q.at(rand(1...50))
 	n = p * q
 
 	sth = (p - 1).lcm(q - 1)
